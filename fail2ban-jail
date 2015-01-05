@@ -1,0 +1,11 @@
+[postfix]
+enabled  = true
+port     = smtp,ssmtp
+filter   = postfix
+logpath  = /var/log/mail.log
+
+[dovecot-pop3imap]
+enabled = true
+port = pop3,pop3s,imap,imaps
+filter = dovecot-pop3imap
+logpath = /var/log/mail.log
