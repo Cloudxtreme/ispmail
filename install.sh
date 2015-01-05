@@ -48,4 +48,5 @@ postmap -q jack@example.org mysql:/etc/postfix/mysql-virtual-alias-maps.cf && \
 groupadd -g 5000 vmail && \
 useradd -g vmail -u 5000 vmail -d /var/vmail -m && \
 chown -R vmail:vmail /var/vmail && \
-chmod u+w /var/vmail
+chmod u+w /var/vmail && \
+cp -r conf.d /etc/dovecot
