@@ -4,7 +4,7 @@ ISPmail Install Script for Ubuntu 14.04 LTS
 
 ## History
 
-In my career as an IT professional, many times the need for a mail server arose. Naively as I was, I set out to set up a simple, easy to use and stable email server. Email being one of the cornerstones of modern online communication, I though this would be a rather trivial task.
+In my career as an IT professional, many times the need for a mail server arose. Naive as I was, I set out to set up a simple, easy to use and stable email server. Email being one of the cornerstones of modern online communication, I though this would be a rather trivial task.
 
 You know what happened.
 
