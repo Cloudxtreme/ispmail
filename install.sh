@@ -66,8 +66,4 @@ postconf -e smtpd_tls_security_level=may && \
 postconf -e smtpd_tls_auth_only=yes && \
 postconf -e smtpd_tls_cert_file=/etc/ssl/certs/mailserver.pem && \
 postconf -e smtpd_tls_key_file=/etc/ssl/private/mailserver.pem && \
-postconf -e smtpd_recipient_restrictions=" \
-
-  permit_mynetworks \
-  permit_sasl_authenticated \
-  reject_unauth_destination"
+postconf -e smtpd_recipient_restrictions="permit_mynetworks permit_sasl_authenticated reject_unauth_destination"
