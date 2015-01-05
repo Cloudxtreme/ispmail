@@ -56,4 +56,18 @@ service dovecot restart && \
 cat postfix-dovecot-connect >> /etc/postfix/master.cf
 postconf -e virtual_transport=dovecot && \
 postconf -e dovecot_destination_recipient_limit=1 && \
-service postfix restart
+service postfix restart && \
+
+# Enable SMTP authentication
+postconf -e smtpd_sasl_type=dovecot && \
+postconf -e smtpd_sasl_path=private/auth && \
+postconf -e smtpd_sasl_auth_enable=yes && \
+postconf -e smtpd_tls_security_level=may && \
+postconf -e smtpd_tls_auth_only=yes && \
+postconf -e smtpd_tls_cert_file=/etc/ssl/certs/mailserver.pem && \
+postconf -e smtpd_tls_key_file=/etc/ssl/private/mailserver.pem && \
+postconf -e smtpd_recipient_restrictions=" \
+
+  permit_mynetworks \
+  permit_sasl_authenticated \
+  reject_unauth_destination"
