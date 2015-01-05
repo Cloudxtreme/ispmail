@@ -2,8 +2,12 @@
 #
 # ISPmail Install Script for Ubuntu 14.04 LTS
 #
-# Based on https://workaround.org/book/export/html/447
-# Created by Marcel Bischoff <https://github.com/herrbischoff>
+# An unholy conglomerate of inspiration coming from the following sources:
+# * https://workaround.org/book/export/html/447
+# * http://sealedabstract.com/code/nsa-proof-your-e-mail-in-2-hours/
+#
+# Laborously created and furiously tested by Marcel Bischoff
+# <https://github.com/herrbischoff>
 
 # Update system
 aptitude update && \
