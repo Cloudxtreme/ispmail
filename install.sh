@@ -50,6 +50,10 @@ postmap -q jack@example.org mysql:/etc/postfix/mysql-virtual-alias-maps.cf && \
 chown -R vmail:vmail /var/vmail && \
 chmod u+w /var/vmail && \
 cp -r conf.d /etc/dovecot && \
+chgrp vmail /etc/dovecot/dovecot.conf && \
+chmod g+r /etc/dovecot/dovecot.conf && \
+chown root:root /etc/dovecot/dovecot-sql.conf.ext && \
+chmod go= /etc/dovecot/dovecot-sql.conf.ext && \
 service dovecot restart && \
 
 # Connect Postfix and Dovecot
