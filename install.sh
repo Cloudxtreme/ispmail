@@ -50,6 +50,7 @@ postmap -q jack@example.org mysql:/etc/postfix/mysql-virtual-alias-maps.cf && \
 chown -R vmail:vmail /var/vmail && \
 chmod u+w /var/vmail && \
 cp -r conf.d /etc/dovecot && \
+service dovecot restart && \
 
 # Connect Postfix and Dovecot
 cat postfix-dovecot-connect >> /etc/postfix/master.cf
