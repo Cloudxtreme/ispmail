@@ -24,7 +24,7 @@ a2enmod ssl && \
 service apache2 reload && \
 
 # Setup database
-mysql -u root < db.sql && \
+mysql -u root -proot < db.sql && \
 
 # Setup Postfix
 mv mysql-virtual-mailbox-domains.cf /etc/postfix/ && \
