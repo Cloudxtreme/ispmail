@@ -37,8 +37,8 @@ cp mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf && \
 postconf -e virtual_alias_maps=mysql:/etc/postfix/mysql-virtual-alias-maps.cf && \
 
 # Check Postfix config
-echo "This should output '1':" && \
-postmap -q example.org mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf && \
+#echo "This should output '1':" && \
+#postmap -q example.org mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf && \
 echo "This should output '1':" && \
 postmap -q john@example.org mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf && \
 echo "This should output 'john@example.com':" && \
