@@ -53,3 +53,6 @@ cp -r conf.d /etc/dovecot && \
 
 # Connect Postfix and Dovecot
 cat postfix-dovecot-connect >> /etc/postfix/master.cf
+postconf -e virtual_transport=dovecot && \
+postconf -e dovecot_destination_recipient_limit=1 && \
+service postfix restart
