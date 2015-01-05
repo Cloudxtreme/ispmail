@@ -27,13 +27,13 @@ service apache2 reload && \
 mysql -u root -proot < db.sql && \
 
 # Setup Postfix
-mv mysql-virtual-mailbox-domains.cf /etc/postfix/ && \
+cp mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf && \
 postconf -e virtual_mailbox_domains=mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf && \
 
-mv mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf && \
+cp mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf && \
 postconf -e virtual_mailbox_maps=mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf && \
 
-mv mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf && \
+cp mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf && \
 postconf -e virtual_alias_maps=mysql:/etc/postfix/mysql-virtual-alias-maps.cf && \
 
 # Check Postfix config
