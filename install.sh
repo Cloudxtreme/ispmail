@@ -49,4 +49,7 @@ groupadd -g 5000 vmail && \
 useradd -g vmail -u 5000 vmail -d /var/vmail -m && \
 chown -R vmail:vmail /var/vmail && \
 chmod u+w /var/vmail && \
-cp -r conf.d /etc/dovecot
+cp -r conf.d /etc/dovecot && \
+
+# Connect Postfix and Dovecot
+cat postfix-dovecot-connect >> /etc/postfix/master.cf
