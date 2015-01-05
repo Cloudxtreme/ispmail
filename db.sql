@@ -1,16 +1,17 @@
-CREATE DATABASE 'mailserver';
+DROP DATABASE mailserver;
+CREATE DATABASE mailserver;
 
 GRANT SELECT ON mailserver.*
 TO 'mailuser'@'127.0.0.1'
 IDENTIFIED BY 'fLxsWdf5ABLqwhZr';
 
-CREATE TABLE `virtual_domains` (
+CREATE TABLE `mailserver`.`virtual_domains` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `virtual_users` (
+CREATE TABLE `mailserver`.`virtual_users` (
   `id` int(11) NOT NULL auto_increment,
   `domain_id` int(11) NOT NULL,
   `password` varchar(32) NOT NULL,
@@ -20,7 +21,7 @@ CREATE TABLE `virtual_users` (
   FOREIGN KEY (domain_id) REFERENCES virtual_domains(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `virtual_aliases` (
+CREATE TABLE `mailserver`.`virtual_aliases` (
   `id` int(11) NOT NULL auto_increment,
   `domain_id` int(11) NOT NULL,
   `source` varchar(100) NOT NULL,
