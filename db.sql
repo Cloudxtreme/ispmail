@@ -2,7 +2,7 @@ DROP DATABASE mailserver;
 CREATE DATABASE mailserver;
 
 GRANT SELECT ON mailserver.*
-TO 'mailuser'@'127.0.0.1'
+TO 'mailuser'@'localhost'
 IDENTIFIED BY 'fLxsWdf5ABLqwhZr';
 
 CREATE TABLE `mailserver`.`virtual_domains` (
