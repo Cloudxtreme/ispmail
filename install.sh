@@ -77,4 +77,7 @@ postconf -e smtpd_recipient_restrictions="permit_mynetworks permit_sasl_authenti
 aptitude install fail2ban && \
 cp dovecot-pop3imap.conf /etc/fail2ban/filter.d/dovecot-pop3imap.conf && \
 cat fail2ban-jail >> /etc/fail2ban/jail.conf && \
-service fail2ban restart
+service fail2ban restart && \
+
+# Add dspam
+aptitude install dspam dovecot-antispam postfix-pcre dovecot-sieve -y
